@@ -4,6 +4,7 @@ services:
   neo4j_datastore:
     container_name: neo4j-store
     image: neo4j:3.0
+    restart: unless-stopped
     volumes:
       - ./data/neo4j:/data
       - ./import:/var/lib/neo4j/import
