@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  neo4j_datastore:
+    container_name: neo4j-store
+    image: neo4j:3.0
+    volumes:
+      - ./data/neo4j:/data
+      - ./import:/var/lib/neo4j/import
+      - ./conf:/var/lib/neo4j/conf
+      - ./plugins:/var/lib/neo4j/plugins
+      - ./certs:/var/lib/neo4j/certificates
+      - ./logs:/var/lib/neo4j/logs
+    ports:
+      #- 10000:7474
+      #- 10687:7687
+      - 7474:7474
+      - 7687:7687
